@@ -1,15 +1,27 @@
 from Polinomio import Polinomio
 
 if __name__ == "__main__":
-    p = Polinomio()
-    p.agregar_termino(3, 2)
-    p.agregar_termino(5, 0)
-    p.agregar_termino(2, 1)
-    p.mostrar()  # Salida: 3x^2 2x^1 5x^0
+    # Primer polinomio
+    p1 = Polinomio()
+    p1.agregar_termino(3, 2)
+    p1.agregar_termino(5, 0)
+    p1.agregar_termino(2, 1)
+    print("Polinomio 1:")
+    p1.mostrar()  # Salida: 3x^2 2x^1 5x^0
 
-    print(p.obtener_valor(1))  # Salida: 2
-    print(p.existe_termino(2))  # Salida: True
-    print(p.existe_termino(4))  # Salida: False
+    # Segundo polinomio
+    p2 = Polinomio()
+    p2.agregar_termino(1, 1)
+    p2.agregar_termino(4, 0)
+    print("Polinomio 2:")
+    p2.mostrar()  # Salida: 1x^1 4x^0
 
-    p.eliminar_termino(1)
-    p.mostrar()  # Salida: 3x^2 5x^0
+    # Sumar los polinomios
+    suma = p1.sumar(p2)
+    print("Suma de Polinomio 1 y Polinomio 2:")
+    suma.mostrar()  # Salida: 3x^2 3x^1 9x^0
+
+    # Multiplicar los polinomios
+    producto = p1.multiplicar(p2)
+    print("Producto de Polinomio 1 y Polinomio 2:")
+    producto.mostrar()  # Salida: 3x^3 11x^2 18x^1 20x^0
