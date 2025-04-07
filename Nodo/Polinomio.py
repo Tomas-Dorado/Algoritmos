@@ -107,3 +107,33 @@ class Polinomio:
             actual = actual.siguiente
 
         return resultado
+    
+    def restar(self, otro_polinomio):
+        """Resta el polinomio actual con otro polinomio."""
+        resultado = Polinomio()
+        actual = self.termino_mayor
+
+        while actual is not None:
+            resultado.agregar_termino(actual.dato.valor, actual.dato.termino)
+            actual = actual.siguiente
+
+        otro_actual = otro_polinomio.termino_mayor
+        while otro_actual is not None:
+            resultado.agregar_termino(-otro_actual.dato.valor, otro_actual.dato.termino)
+            otro_actual = otro_actual.siguiente
+
+        return resultado
+    
+    def derivar(self):
+        """Deriva el polinomio actual."""
+        resultado = Polinomio()
+        actual = self.termino_mayor
+
+        while actual is not None:
+            if actual.dato.termino > 0:
+                nuevo_valor = actual.dato.valor * actual.dato.termino
+                nuevo_termino = actual.dato.termino - 1
+                resultado.agregar_termino(nuevo_valor, nuevo_termino)
+            actual = actual.siguiente
+
+        return resultado
