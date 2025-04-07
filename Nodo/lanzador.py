@@ -1,7 +1,6 @@
 from Polinomio import Polinomio
 
-if __name__ == "__main__":
-    # Primer polinomio
+def main():
     p1 = Polinomio()
     p1.agregar_termino(3, 2)
     p1.agregar_termino(5, 0)
